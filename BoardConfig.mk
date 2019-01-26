@@ -164,6 +164,9 @@ BOARD_QTI_CAMERA_32BIT_ONLY := true
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
+# Radio
+TARGET_USES_OLD_MNC_FORMAT := true
+
 TARGET_FS_CONFIG_GEN += device/lge/bullhead/config.fs
 
 -include vendor/lge/bullhead/BoardConfigVendor.mk
