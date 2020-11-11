@@ -382,14 +382,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
-	debug.sf.latch_unsignaled=1 \
-	debug.sf.disable_backpressure=1
+    debug.sf.latch_unsignaled=1 \
+    debug.sf.disable_backpressure=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=420
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.hwc.mdpcomp.enable=true
+    persist.hwc.mdpcomp.enable=true \
+    persist.metadata_dynfps.disable=true \
+    persist.mdpcomp_perfhint=50 \
+    persist.hwc.ptor.enable=true \
+    debug.composition.type=c2d
 
 # Enable low power video mode for 4K encode
 PRODUCT_PROPERTY_OVERRIDES += \
