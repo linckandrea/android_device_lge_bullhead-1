@@ -168,7 +168,7 @@ TARGET_PER_MGR_ENABLED := true
 # Radio
 TARGET_USES_OLD_MNC_FORMAT := true
 
-TARGET_FS_CONFIG_GEN += device/lge/bullhead/config.fs
+TARGET_FS_CONFIG_GEN += device/lge/bullhead/configs/config.fs
 
 -include vendor/lge/bullhead/BoardConfigVendor.mk
 

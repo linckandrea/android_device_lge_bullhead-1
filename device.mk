@@ -44,9 +44,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml
+    $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media/media_profiles.xml:system/etc/media_profiles.xml
 
 # APEX
 PRODUCT_COPY_FILES += \
@@ -54,11 +54,11 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    $(LOCAL_PATH)/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio_policy_volumes_drc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes_drc.xml \
+    $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/configs/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/configs/audio/audio_policy_volumes_drc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes_drc.xml \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
@@ -66,8 +66,8 @@ PRODUCT_COPY_FILES += \
 
 #Sound Trigger
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_platform_info.xml
+    $(LOCAL_PATH)/configs/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_mixer_paths.xml \
+    $(LOCAL_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_platform_info.xml
 
 # Input device files
 PRODUCT_COPY_FILES += \
@@ -121,7 +121,7 @@ PRODUCT_COPY_FILES += \
 
 # For GPS
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sec_config:$(TARGET_COPY_OUT_SYSTEM)/etc/sec_config
+    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_SYSTEM)/etc/sec_config
 
 # NFC config files
 PRODUCT_COPY_FILES += \
@@ -137,7 +137,7 @@ PRODUCT_COPY_FILES += \
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
 # Power configuration file
 PRODUCT_COPY_FILES += \
@@ -228,7 +228,7 @@ PRODUCT_PACKAGES += \
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf
+    $(LOCAL_PATH)/configs/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf
 
 # GPS
 PRODUCT_PACKAGES += \
