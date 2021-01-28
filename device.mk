@@ -23,21 +23,21 @@
 TARGET_USES_CHINOOK_SENSORHUB := false
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.bullhead.rc:root/init.bullhead.rc \
-    $(LOCAL_PATH)/init.bullhead.usb.rc:root/init.bullhead.usb.rc \
-    $(LOCAL_PATH)/fstab.bullhead:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bullhead \
-    $(LOCAL_PATH)/ueventd.bullhead.rc:root/ueventd.bullhead.rc \
-    $(LOCAL_PATH)/init.recovery.bullhead.rc:root/init.recovery.bullhead.rc \
-    $(LOCAL_PATH)/init.bullhead.ramdump.rc:root/init.bullhead.ramdump.rc \
-    $(LOCAL_PATH)/init.bullhead.fp.rc:root/init.bullhead.fp.rc \
-    $(LOCAL_PATH)/init.qcom.devstart.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.devstart.sh
+    $(LOCAL_PATH)/rootdir/etc/init.bullhead.rc:root/init.bullhead.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.bullhead.usb.rc:root/init.bullhead.usb.rc \
+    $(LOCAL_PATH)/rootdir/etc/fstab.bullhead:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bullhead \
+    $(LOCAL_PATH)/rootdir/etc/ueventd.bullhead.rc:root/ueventd.bullhead.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.recovery.bullhead.rc:root/init.recovery.bullhead.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.bullhead.ramdump.rc:root/init.bullhead.ramdump.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.bullhead.fp.rc:root/init.bullhead.fp.rc \
+    $(LOCAL_PATH)/rootdir/bin/init.qcom.devstart.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.devstart.sh
 
 ifeq ($(TARGET_USES_CHINOOK_SENSORHUB),true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.bullhead.sensorhub.rc:root/init.bullhead.sensorhub.rc
+    $(LOCAL_PATH)/rootdir/etc/init.bullhead.sensorhub.rc:root/init.bullhead.sensorhub.rc
 else
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.bullhead.nanohub.rc:root/init.bullhead.sensorhub.rc
+    $(LOCAL_PATH)/rootdir/etc/init.bullhead.nanohub.rc:root/init.bullhead.sensorhub.rc
 endif
 
 PRODUCT_COPY_FILES += \
@@ -141,11 +141,11 @@ PRODUCT_COPY_FILES += \
 
 # Power configuration file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.bullhead.power.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.bullhead.power.sh
+    $(LOCAL_PATH)/rootdir/bin/init.bullhead.power.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.bullhead.power.sh
 
 # MBN
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.bullhead.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.bullhead.sh
+    $(LOCAL_PATH)/rootdir/bin/init.bullhead.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.bullhead.sh
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -566,12 +566,12 @@ PRODUCT_PACKAGES += \
 endif # aosp_bullhead
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.bullhead.diag.rc.userdebug:root/init.bullhead.diag.rc \
-    $(LOCAL_PATH)/init.bullhead.misc.rc.userdebug:root/init.bullhead.misc.rc
+    $(LOCAL_PATH)/rootdir/etc/init.bullhead.diag.rc.userdebug:root/init.bullhead.diag.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.bullhead.misc.rc.userdebug:root/init.bullhead.misc.rc
 else
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.bullhead.diag.rc.user:root/init.bullhead.diag.rc \
-    $(LOCAL_PATH)/init.bullhead.misc.rc.user:root/init.bullhead.misc.rc
+    $(LOCAL_PATH)/rootdir/etc/init.bullhead.diag.rc.user:root/init.bullhead.diag.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.bullhead.misc.rc.user:root/init.bullhead.misc.rc
 endif
 
 # Set if a device image has the VTS coverage instrumentation.
