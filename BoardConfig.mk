@@ -60,7 +60,7 @@ AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/bullhead/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 BOARD_HAS_QCA_BT_ROME := true
 WCNSS_FILTER_USES_SIBS := true
 
@@ -82,10 +82,10 @@ BOARD_USES_SECURE_SERVICES := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := msm8992
 TARGET_BOOTLOADER_BOARD_NAME := bullhead
-TARGET_BOARD_INFO_FILE := device/lge/bullhead/board-info.txt
+TARGET_BOARD_INFO_FILE := $(LOCAL_PATH)/board-info.txt
 TARGET_NO_RPC := true
 
-BOARD_EGL_CFG := device/lge/bullhead/egl.cfg
+BOARD_EGL_CFG := $(LOCAL_PATH)/egl.cfg
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
@@ -138,9 +138,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # Build a separate vendor.img
 TARGET_COPY_OUT_VENDOR := vendor
 
-TARGET_RECOVERY_FSTAB = device/lge/bullhead/fstab.bullhead
+TARGET_RECOVERY_FSTAB = $(LOCAL_PATH)/rootdir/etc/fstab.bullhead
 
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/bullhead
+TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
@@ -148,7 +148,7 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 
 BOARD_SEPOLICY_DIRS += \
-    device/lge/bullhead/sepolicy
+    $(LOCAL_PATH)/sepolicy
 
 TARGET_USES_64_BIT_BINDER := true
 
@@ -168,15 +168,15 @@ TARGET_PER_MGR_ENABLED := true
 # Radio
 TARGET_USES_OLD_MNC_FORMAT := true
 
-TARGET_FS_CONFIG_GEN += device/lge/bullhead/configs/config.fs
+TARGET_FS_CONFIG_GEN += $(LOCAL_PATH)/configs/config.fs
 
 -include vendor/lge/bullhead/BoardConfigVendor.mk
 
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/bullhead-setup.sh
 
-DEVICE_MANIFEST_FILE := device/lge/bullhead/manifest.xml
-DEVICE_MATRIX_FILE := device/lge/bullhead/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.xml
 
 ifeq ($(TARGET_PRODUCT),aosp_bullhead_svelte)
 BOARD_KERNEL_CMDLINE += mem=1024M maxcpus=2
