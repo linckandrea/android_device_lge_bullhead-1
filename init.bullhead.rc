@@ -307,18 +307,21 @@ service irsc_util /vendor/bin/irsc_util "/etc/sec_config"
     class main
     user root
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 service rmt_storage /vendor/bin/rmt_storage
     class core
     user root
     group system wakelock
     shutdown critical
+    writepid /dev/cpuset/system-background/tasks
 
 service start_hci_filter /vendor/bin/wcnss_filter
     class late_start
     user bluetooth
     group bluetooth system
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:wc_transport.start_hci=true
     start start_hci_filter
@@ -331,6 +334,7 @@ service qmuxd /vendor/bin/qmuxd
     class main
     user radio
     group radio audio bluetooth wakelock gps
+    writepid /dev/cpuset/system-background/tasks
 
 service perfd /vendor/bin/perfd
     class main
@@ -342,21 +346,25 @@ service qti /vendor/bin/qti
     class main
     user radio
     group radio net_raw diag usb net_admin
+    writepid /dev/cpuset/system-background/tasks
 
 service netmgrd /vendor/bin/netmgrd
     class main
     group radio system wakelock
+    writepid /dev/cpuset/system-background/tasks
 
 service per_mgr /vendor/bin/pm-service
     class core
     user system
     group system net_raw
+    writepid /dev/cpuset/system-background/tasks
 
 service per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system net_raw
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:init.svc.per_mgr=running
     start per_proxy
@@ -407,11 +415,13 @@ service loc_launcher /vendor/bin/loc_launcher
 
 service cnss-daemon /vendor/bin/cnss-daemon -n -l
     class late_start
+    writepid /dev/cpuset/system-background/tasks
 
 service qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
+    writepid /dev/cpuset/system-background/tasks
 
 service msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
     socket msm_irqbalance seqpacket 660 root system
@@ -444,6 +454,7 @@ service cnd /vendor/bin/cnd
     class late_start
     socket cnd stream 660 root inet
     group root wakelock
+    writepid /dev/cpuset/system-background/tasks
 
 service bullhead-sh /vendor/bin/init.bullhead.sh
     class late_start
