@@ -71,14 +71,14 @@ PRODUCT_COPY_FILES += \
 
 # Input device files
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    device/lge/bullhead/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
-    device/lge/bullhead/uinput-fpc.idc:system/usr/idc/uinput-fpc.idc \
-    device/lge/bullhead/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl
+    device/lge/bullhead/configs/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    device/lge/bullhead/configs/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
+    device/lge/bullhead/configs/uinput-fpc.idc:system/usr/idc/uinput-fpc.idc \
+    device/lge/bullhead/configs/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl
 
 # Prebuilt input device calibration files
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/synaptics_rmi4_i2c.idc:system/usr/idc/synaptics_rmi4_i2c.idc
+    device/lge/bullhead/configs/synaptics_rmi4_i2c.idc:system/usr/idc/synaptics_rmi4_i2c.idc
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -121,7 +121,7 @@ PRODUCT_COPY_FILES += \
 
 # For GPS
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/sec_config:system/etc/sec_config
+    device/lge/bullhead/sec_config:system/vendor/etc/sec_config
 
 # NFC config files
 PRODUCT_COPY_FILES += \
@@ -137,7 +137,7 @@ PRODUCT_COPY_FILES += \
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/msm_irqbalance.conf:vendor/etc/msm_irqbalance.conf
+    device/lge/bullhead/configs/msm_irqbalance.conf:vendor/etc/msm_irqbalance.conf
 
 # Power configuration file
 PRODUCT_COPY_FILES += \
