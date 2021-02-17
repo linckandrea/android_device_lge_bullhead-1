@@ -23,30 +23,30 @@
 TARGET_USES_CHINOOK_SENSORHUB := false
 
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.rc:root/init.bullhead.rc \
-    device/lge/bullhead/init.bullhead.usb.rc:root/init.bullhead.usb.rc \
-    device/lge/bullhead/fstab.bullhead:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bullhead \
-    device/lge/bullhead/ueventd.bullhead.rc:root/ueventd.bullhead.rc \
-    device/lge/bullhead/init.recovery.bullhead.rc:root/init.recovery.bullhead.rc \
-    device/lge/bullhead/init.bullhead.ramdump.rc:root/init.bullhead.ramdump.rc \
-    device/lge/bullhead/init.bullhead.fp.rc:root/init.bullhead.fp.rc \
-    device/lge/bullhead/init.qcom.devstart.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.devstart.sh
+    $(LOCAL_PATH)/init.bullhead.rc:root/init.bullhead.rc \
+    $(LOCAL_PATH)/init.bullhead.usb.rc:root/init.bullhead.usb.rc \
+    $(LOCAL_PATH)/fstab.bullhead:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bullhead \
+    $(LOCAL_PATH)/ueventd.bullhead.rc:root/ueventd.bullhead.rc \
+    $(LOCAL_PATH)/init.recovery.bullhead.rc:root/init.recovery.bullhead.rc \
+    $(LOCAL_PATH)/init.bullhead.ramdump.rc:root/init.bullhead.ramdump.rc \
+    $(LOCAL_PATH)/init.bullhead.fp.rc:root/init.bullhead.fp.rc \
+    $(LOCAL_PATH)/init.qcom.devstart.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.devstart.sh
 
 ifeq ($(TARGET_USES_CHINOOK_SENSORHUB),true)
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.sensorhub.rc:root/init.bullhead.sensorhub.rc
+    $(LOCAL_PATH)/init.bullhead.sensorhub.rc:root/init.bullhead.sensorhub.rc
 else
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.nanohub.rc:root/init.bullhead.sensorhub.rc
+    $(LOCAL_PATH)/init.bullhead.nanohub.rc:root/init.bullhead.sensorhub.rc
 endif
 
 PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/lge/bullhead/media_codecs.xml:system/etc/media_codecs.xml \
-    device/lge/bullhead/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    device/lge/bullhead/media_profiles.xml:system/etc/media_profiles.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_video.xml \
+    $(LOCAL_PATH)/media_codecs.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs.xml \
+    $(LOCAL_PATH)/media_codecs_performance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/media_profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles.xml
 
 # APEX
 PRODUCT_COPY_FILES += \
@@ -54,11 +54,11 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    device/lge/bullhead/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
-    device/lge/bullhead/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
-    device/lge/bullhead/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    device/lge/bullhead/audio_policy_volumes_drc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes_drc.xml \
+    $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(LOCAL_PATH)/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio_policy_volumes_drc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes_drc.xml \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
@@ -66,19 +66,19 @@ PRODUCT_COPY_FILES += \
 
 #Sound Trigger
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    device/lge/bullhead/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml
+    $(LOCAL_PATH)/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_mixer_paths.xml \
+    $(LOCAL_PATH)/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sound_trigger_platform_info.xml
 
 # Input device files
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/configs/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    device/lge/bullhead/configs/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
-    device/lge/bullhead/configs/uinput-fpc.idc:system/usr/idc/uinput-fpc.idc \
-    device/lge/bullhead/configs/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl
+    $(LOCAL_PATH)/configs/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl \
+    $(LOCAL_PATH)/configs/qpnp_pon.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/qpnp_pon.kl \
+    $(LOCAL_PATH)/configs/uinput-fpc.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-fpc.idc \
+    $(LOCAL_PATH)/configs/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl
 
 # Prebuilt input device calibration files
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/configs/synaptics_rmi4_i2c.idc:system/usr/idc/synaptics_rmi4_i2c.idc
+    $(LOCAL_PATH)/configs/synaptics_rmi4_i2c.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/synaptics_rmi4_i2c.idc
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -121,31 +121,31 @@ PRODUCT_COPY_FILES += \
 
 # For GPS
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/sec_config:system/vendor/etc/sec_config
+    $(LOCAL_PATH)/sec_config:system/vendor/etc/sec_config
 
 # NFC config files
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
-    device/lge/bullhead/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
+    $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
+    $(LOCAL_PATH)/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
 # For WiFi
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-    device/lge/bullhead/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    device/lge/bullhead/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat \
-    device/lge/bullhead/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:$(TARGET_COPY_OUT_SYSTEM)/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_SYSTEM)/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/configs/msm_irqbalance.conf:vendor/etc/msm_irqbalance.conf
+    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
 # Power configuration file
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.power.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.bullhead.power.sh
+    $(LOCAL_PATH)/init.bullhead.power.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.bullhead.power.sh
 
 # MBN
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.bullhead.sh
+    $(LOCAL_PATH)/init.bullhead.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.bullhead.sh
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -228,7 +228,7 @@ PRODUCT_PACKAGES += \
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/gps.conf:system/etc/gps.conf
+    $(LOCAL_PATH)/gps.conf:system/etc/gps.conf
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -336,7 +336,7 @@ PRODUCT_PACKAGES += \
     bullhead_wlan_mac
 
 DEVICE_PACKAGE_OVERLAYS := \
-    device/lge/bullhead/overlay
+    $(LOCAL_PATH)/overlay
 
 # Health HAL
 PRODUCT_PACKAGES += \
@@ -566,12 +566,12 @@ PRODUCT_PACKAGES += \
 endif # aosp_bullhead
 
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.diag.rc.userdebug:root/init.bullhead.diag.rc \
-    device/lge/bullhead/init.bullhead.misc.rc.userdebug:root/init.bullhead.misc.rc
+    $(LOCAL_PATH)/init.bullhead.diag.rc.userdebug:root/init.bullhead.diag.rc \
+    $(LOCAL_PATH)/init.bullhead.misc.rc.userdebug:root/init.bullhead.misc.rc
 else
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.diag.rc.user:root/init.bullhead.diag.rc \
-    device/lge/bullhead/init.bullhead.misc.rc.user:root/init.bullhead.misc.rc
+    $(LOCAL_PATH)/init.bullhead.diag.rc.user:root/init.bullhead.diag.rc \
+    $(LOCAL_PATH)/init.bullhead.misc.rc.user:root/init.bullhead.misc.rc
 endif
 
 # Set if a device image has the VTS coverage instrumentation.
